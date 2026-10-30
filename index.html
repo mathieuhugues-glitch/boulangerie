@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Boulangerie">
+<meta name="theme-color" content="#ffe8d6">
+<title>La boulangerie · Bageriet</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<section id="start" class="screen">
+  <div class="toprow"><button class="round" id="flag" aria-label="Langue"></button></div>
+  <h1 class="title" id="title"></h1>
+  <div class="roles">
+    <button class="role" data-role="client"><span class="rpic">👧🛍️</span><span class="rname" data-t="client"></span></button>
+    <button class="role" data-role="cashier"><span class="rpic">👧💰</span><span class="rname" data-t="cashier"></span></button>
+  </div>
+  <div class="levels" id="levels"></div>
+  <div class="novoice hidden" id="novoice">🔇?</div>
+</section>
+
+<section id="game" class="screen hidden">
+  <div class="topbar">
+    <button class="round" id="home" aria-label="Accueil">🏠</button>
+    <div class="dots" id="dots"></div>
+    <div class="tr"><button class="round hintbtn" id="hintBtn" aria-label="Aide">💡</button><button class="round" id="flag2" aria-label="Langue"></button><button class="round" id="mute" aria-label="Son"></button></div>
+  </div>
+  <div class="scene">
+    <div class="shelf" id="shelf"></div>
+    <div class="counter">
+      <div class="who"><div class="char" id="char"></div><div class="bubble" id="bubble"></div></div>
+      <div class="mat" id="mat"><div class="matitems" id="matitems"></div><div class="matsum" id="matsum"></div></div>
+    </div>
+  </div>
+  <div class="bottom" id="bottom"></div>
+  <div class="hint hidden" id="hint"></div>
+  <div class="fx" id="fx"></div>
+  <div class="lvlup hidden" id="lvlup"></div>
+</section>
+
+<section id="end" class="screen hidden">
+  <div class="jarwrap"><div class="jar" id="jar"></div></div>
+  <div class="stars" id="endStars"></div>
+  <div class="endbtns"><button class="bigbtn green" id="again" aria-label="Rejouer">🔁</button><button class="bigbtn blue" id="home2" aria-label="Accueil">🏠</button></div>
+</section>
+
+<script src="js/money.js"></script>
+<script src="js/sound.js"></script>
+<script src="js/voice.js"></script>
+<script src="js/game.js"></script>
+<script>if ('serviceWorker' in navigator && location.protocol !== 'file:') navigator.serviceWorker.register('sw.js').catch(() => {});</script>
+</body>
+</html>
